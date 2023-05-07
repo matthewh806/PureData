@@ -6,13 +6,13 @@
 #X obj 116 413 phasor~;
 #X obj 121 540 *~;
 #X obj 115 595 tabread~ sample1;
-#X floatatom 21 372 5 0 0 0 - - -;
+#X floatatom 21 372 5 0 0 0 - - - 0;
 #X obj 79 163 expr 44100 / $f1;
 #X obj 55 347 t b f;
 #X obj 116 382 *;
 #X text 569 813 volume ctrl;
 #X obj 278 228 t b f;
-#X floatatom 209 163 5 0 0 0 - - -;
+#X floatatom 209 163 5 0 0 0 - - - 0;
 #X obj 201 228 -;
 #X obj 116 444 *~;
 #X obj 116 475 +~;
@@ -53,12 +53,10 @@
 #X obj 792 176 adc~;
 #X obj 795 220 tabwrite~ sample1;
 #X obj 896 64 r record;
-#X obj 895 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 895 103 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 882 138 moses 1;
 #X msg 865 170 stop;
-#X obj 953 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 953 174 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X connect 0 0 2 0;
 #X connect 1 0 7 0;
 #X connect 1 0 28 1;
@@ -123,44 +121,34 @@
 #X connect 55 0 51 0;
 #X connect 56 0 51 0;
 #X restore 260 545 pd subpatch;
-#X obj 40 31 cnv 15 300 500 empty empty empty 20 12 0 14 -228856 -66577
-0;
-#X obj 40 31 cnv 15 300 60 empty empty empty 20 12 0 14 -203904 -66577
-0;
-#X obj 40 91 cnv 15 300 100 empty empty empty 20 12 0 14 -232576 -66577
-0;
-#X obj 40 192 cnv 15 300 200 empty empty empty 20 12 0 14 -203904 -66577
-0;
-#X obj 40 392 cnv 15 300 100 empty empty empty 20 12 0 14 -232576 -66577
-0;
-#X obj 54 46 bng 30 250 50 0 load empty empty 17 7 0 10 -204786 -4032
--4032;
+#X obj 40 31 cnv 15 300 500 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 40 31 cnv 15 300 60 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#X obj 40 91 cnv 15 300 100 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
+#X obj 40 192 cnv 15 300 200 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#X obj 40 392 cnv 15 300 100 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
+#X obj 54 46 bng 30 250 50 0 load empty empty 17 7 0 10 #c4fcc4 #00f8fc #00f8fc;
 #X text 101 47 Load a file;
-#X obj 57 114 hsl 260 15 0 1 0 0 left-limit empty empty -2 -8 0 10
--262144 -1 -1 0 1;
-#X obj 56 147 hsl 260 15 0 1 0 0 right-limit init_right empty -2 -8
-0 10 -262144 -1 -1 11600 1;
+#X obj 57 114 hsl 260 15 0 1 0 0 left-limit empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 56 147 hsl 260 15 0 1 0 0 right-limit init_right empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 53 91 Left limit;
 #X text 238 166 right limit;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sample1 240548 float 2;
 #X coords 0 1 240548 -1 200 140 1;
 #X restore 81 212 graph;
-#X obj 84 363 hsl 198 15 0 1 0 0 empty pos empty -2 -8 0 10 -262144
--1 -1 4805 1;
-#X obj 61 412 hsl 260 15 -2 2 0 0 speed init_speed empty -2 -8 0 10
--262144 -1 -1 19525 1;
-#X obj 61 512 hsl 260 15 0 1 0 0 amp empty empty -2 -8 0 10 -262144
--1 -1 19700 1;
+#X obj 84 363 hsl 198 15 0 1 0 0 empty pos empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 61 412 hsl 260 15 -2 2 0 0 speed init_speed empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 61 512 hsl 260 15 0 1 0 0 amp empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 56 390 playback speed;
 #X text 57 492 volume;
-#X floatatom 286 391 5 0 0 0 - speed -;
+#X floatatom 286 391 5 0 0 0 - speed - 0;
 #X text 138 7 ITS GONNA RAIN;
-#X obj 61 454 hsl 220 15 1 1.1 0 1 phase init_phase Relative_Phase
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 305 454 bng 15 250 50 0 reset_phase empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 61 454 hsl 220 15 1 1.1 0 1 phase init_phase Relative_Phase -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 305 454 bng 15 250 50 0 reset_phase empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 257 472 reset phase;
-#X floatatom 246 433 5 0 0 2 rel-phase rel-phase -;
-#X obj 230 44 bng 30 250 50 0 record empty record_input 17 7 0 10 -4032
--1 -1;
+#X floatatom 246 433 5 0 0 2 rel-phase rel-phase - 0;
+#X obj 230 44 bng 30 250 50 0 record empty record_input 17 7 0 10 #00f8fc #000000 #000000;
+#X text 41 545 v1.0;
+#X text 40 566 Created by: Matthew Harris;
+#X text 40 585 Created on: 29/10/2020;
+#X text 40 602 Modified on: 11/11/2020;
