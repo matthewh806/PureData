@@ -1,0 +1,17 @@
+#N canvas 855 397 450 534 12;
+#X obj 26 27 inlet~;
+#X obj 59 249 snapshot~;
+#X obj 54 299 outlet;
+#X obj 75 64 loadbang;
+#X obj 102 97 t b b;
+#X obj 121 130 f \$1;
+#X obj 120 169 sel 0;
+#X obj 86 201 metro 3000;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 4 1 5 0;
+#X connect 5 0 6 0;
+#X connect 6 1 7 1;
+#X connect 7 0 1 0;
