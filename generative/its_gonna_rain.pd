@@ -1,15 +1,15 @@
 #N canvas 11 317 380 626 12;
-#N canvas 350 40 1304 917 subpatch 1;
+#N canvas 350 40 1304 917 subpatch 0;
 #X obj 183 416 phasor~;
 #X obj 182 598 *~;
 #X obj 182 632 tabread~ sample1;
-#X floatatom 70 338 5 0 0 0 - - -;
+#X floatatom 70 338 5 0 0 0 - - - 0;
 #X obj 156 148 expr 44100 / $f1;
 #X obj 165 299 t b f;
 #X obj 180 370 *;
 #X text 501 699 volume ctrl;
 #X obj 987 601 t b f;
-#X floatatom 908 630 5 0 0 0 - - -;
+#X floatatom 908 630 5 0 0 0 - - - 0;
 #X obj 908 657 -;
 #X obj 183 447 *~;
 #X obj 182 495 +~;
@@ -48,12 +48,10 @@
 #X obj 913 187 adc~;
 #X obj 913 231 tabwrite~ sample1;
 #X obj 900 71 r record;
-#X obj 900 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 900 98 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 902 125 moses 1;
 #X msg 960 186 stop;
-#X obj 1012 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 1012 188 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 909 374 openpanel;
 #X obj 909 436 soundfiler;
 #X msg 909 405 read -resize \$1 sample1;
@@ -172,43 +170,29 @@
 #X connect 89 0 91 0;
 #X connect 90 0 92 0;
 #X restore 260 545 pd subpatch;
-#X obj 40 31 cnv 15 300 500 empty empty empty 20 12 0 14 -228856 -66577
-0;
-#X obj 40 31 cnv 15 300 60 empty empty empty 20 12 0 14 -203904 -66577
-0;
-#X obj 40 91 cnv 15 300 100 empty empty empty 20 12 0 14 -232576 -66577
-0;
-#X obj 40 192 cnv 15 300 200 empty empty empty 20 12 0 14 -203904 -66577
-0;
-#X obj 40 392 cnv 15 300 100 empty empty empty 20 12 0 14 -232576 -66577
-0;
-#X obj 54 43 bng 30 250 50 0 load empty empty 17 7 0 10 -204786 -4032
--4032;
+#X obj 40 31 cnv 15 300 500 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 40 31 cnv 15 300 60 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#X obj 40 91 cnv 15 300 100 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
+#X obj 40 192 cnv 15 300 200 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#X obj 40 392 cnv 15 300 100 empty empty empty 20 12 0 14 #e0c4fc #404040 0;
+#X obj 54 43 bng 30 250 50 0 load empty empty 17 7 0 10 #c4fcc4 #00f8fc #00f8fc;
 #X text 88 41 Load a file;
-#X obj 57 114 hsl 260 15 0 1 0 0 left-limit empty empty -2 -8 0 10
--262144 -1 -1 6200 1;
-#X obj 57 147 hsl 260 15 0 1 0 0 right-limit init_right empty -2 -8
-0 10 -262144 -1 -1 17900 1;
+#X obj 57 114 hsl 260 15 0 1 0 0 left-limit empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 57 147 hsl 260 15 0 1 0 0 right-limit init_right empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sample1 380995 float 2;
 #X coords 0 1 380995 -1 200 140 1;
 #X restore 81 212 graph;
-#X obj 84 363 hsl 198 15 0 1 0 0 empty pos empty -2 -8 0 10 -262144
--1 -1 11978 1;
-#X obj 61 412 hsl 260 15 -2 2 0 0 speed init_speed empty -2 -8 0 10
--262144 -1 -1 19425 1;
-#X obj 61 512 hsl 260 15 0 1 0 0 amp init_amp empty -2 -8 0 10 -262144
--1 -1 20720 1;
+#X obj 84 363 hsl 198 15 0 1 0 0 empty pos empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 61 412 hsl 260 15 -2 2 0 0 speed init_speed empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 61 512 hsl 260 15 0 1 0 0 amp init_amp empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 57 492 volume;
-#X floatatom 286 391 5 0 0 0 - speed -;
+#X floatatom 286 391 5 0 0 0 - speed - 0;
 #X text 138 7 ITS GONNA RAIN;
-#X obj 62 456 hsl 260 15 1 1.1 0 1 phase init_phase empty -2 -8 0 10
--262144 -1 -1 900 1;
-#X obj 237 474 bng 15 250 50 0 reset_phase empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 285 434 5 0 0 2 - phase -;
-#X obj 217 44 bng 30 250 50 0 record empty empty 17 7 0 10 -4032 -1
--1;
+#X obj 62 456 hsl 260 15 1 1.1 0 1 phase init_phase empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 237 474 bng 15 250 50 0 reset_phase empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 285 434 5 0 0 2 - phase - 0;
+#X obj 217 44 bng 30 250 50 0 record empty empty 17 7 0 10 #00f8fc #000000 #000000;
 #X text 40 566 Created by: Matthew Harris;
 #X text 40 585 Created on: 29/10/2020;
 #X text 252 41 Record Input;
