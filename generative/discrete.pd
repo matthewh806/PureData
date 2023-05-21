@@ -1,5 +1,5 @@
-#N canvas 847 217 774 509 12;
-#X obj 90 256 dac~;
+#N canvas 62 173 774 509 12;
+#X obj 90 301 dac~;
 #X text 29 417 Created by: Matthew Harris;
 #X text 29 397 Created on: 20/05/2023;
 #X text 307 385 Inspired by Eno's Discrete Music and;
@@ -26,13 +26,19 @@
 #X obj 93 138 r trigger;
 #X obj 449 82 f 0;
 #X text 30 437 Modified on: 21/05/2023;
-#X text 31 379 v0.2;
+#X obj 94 260 panner;
+#X text 192 211 pan position;
+#X text 192 232 0 fully left;
+#X text 191 267 1 fully right;
+#X text 192 249 50 centered;
+#X obj 121 201 loadbang;
+#X msg 126 234 25;
+#X text 31 379 v0.3;
 #X connect 7 0 6 0;
 #X connect 8 0 6 1;
 #X connect 10 0 11 0;
 #X connect 11 0 12 1;
-#X connect 12 0 0 0;
-#X connect 12 0 0 1;
+#X connect 12 0 25 0;
 #X connect 14 0 16 0;
 #X connect 15 0 23 0;
 #X connect 16 0 23 1;
@@ -41,3 +47,7 @@
 #X connect 22 0 12 0;
 #X connect 23 0 14 0;
 #X connect 23 0 17 0;
+#X connect 25 0 0 0;
+#X connect 25 1 0 1;
+#X connect 30 0 31 0;
+#X connect 31 0 25 1;
