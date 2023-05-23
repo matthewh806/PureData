@@ -1,4 +1,4 @@
-#N canvas 568 153 907 590 12;
+#N canvas 445 322 907 590 12;
 #X obj 27 136 loadbang;
 #X obj 156 137 loadbang;
 #X msg 27 174 60;
@@ -60,6 +60,7 @@
 #X obj 731 378 * 1000;
 #X obj 27 51 inlet;
 #X text 85 52 expects toggle as inlet;
+#X obj 731 146 send quarter_note_time;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 8 0;
@@ -81,6 +82,7 @@
 #X connect 31 0 36 0;
 #X connect 32 0 35 0;
 #X connect 35 0 30 1;
+#X connect 35 0 57 0;
 #X connect 37 0 38 0;
 #X connect 38 0 39 0;
 #X connect 39 0 47 0;
