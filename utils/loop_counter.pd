@@ -1,6 +1,6 @@
-#N canvas 267 171 1279 629 12;
+#N canvas 0 25 1680 997 12;
 #X obj 724 243 hradio 15 1 0 16 empty empty empty 0 -8 0 10 -262144
--1 -1 7;
+-1 -1 15;
 #X obj 787 79 + 1;
 #X obj 720 39 r sixteenth_note;
 #X obj 787 108 mod 16;
@@ -11,7 +11,7 @@
 #X text 843 39 16th counter;
 #X floatatom 737 166 5 0 0 0 - - -;
 #X obj 422 241 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 3;
 #X obj 485 77 + 1;
 #X obj 419 128 f -1;
 #X obj 387 69 r ON;
@@ -68,6 +68,8 @@ MOMENT;
 #X obj 319 230 sel 0;
 #X obj 653 293 r \$0-loop-start;
 #X obj 320 270 s \$0-loop-start;
+#X obj 398 322 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
 #X connect 3 0 5 1;
@@ -113,4 +115,5 @@ MOMENT;
 #X connect 55 0 56 0;
 #X connect 57 0 55 0;
 #X connect 60 0 62 0;
+#X connect 60 0 63 0;
 #X connect 61 0 57 0;
